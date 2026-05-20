@@ -1,0 +1,275 @@
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Color Palette & Global Variables */
+:root {
+    --theme-color: #ff5757;
+    --theme-hover: #e04a4a;
+    --text-main: #2b2b2b;
+    --text-light: #6c757d;
+    --bg-light: #f8f9fa;
+    --shadow-sm: 0 5px 15px rgba(0,0,0,0.03);
+    --shadow-md: 0 10px 30px rgba(0,0,0,0.08);
+    --shadow-hover: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* Base Styles & Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-main);
+    background-color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, .navbar-brand {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.5px;
+}
+
+/* Utility Classes */
+.text-purple { color: #8a2be2; }
+.text-theme { color: var(--theme-color) !important; }
+.tracking-wide { letter-spacing: 1px; }
+
+/* Custom Buttons with Premium Pop Effect */
+.btn-theme {
+    background: linear-gradient(135deg, var(--theme-color), #ff7575);
+    color: #ffffff;
+    font-weight: 500;
+    border: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-theme:hover {
+    background: linear-gradient(135deg, var(--theme-hover), var(--theme-color));
+    color: #ffffff;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(255, 87, 87, 0.3) !important;
+}
+
+/* Navigation Bar */
+.navbar {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.navbar-nav .nav-link {
+    font-size: 0.9rem;
+    color: var(--text-main) !important;
+    margin: 0 15px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: var(--theme-color);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+.navbar-nav .nav-link:hover, 
+.navbar-nav .nav-link.active {
+    color: var(--theme-color) !important;
+}
+
+.nav-cart-icon {
+    transition: transform 0.3s ease;
+}
+.nav-cart-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Feature Boxes */
+.feature-box {
+    transition: transform 0.3s ease;
+}
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+/* Universal Image Wrapper for Hover Zoom */
+.img-wrapper {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.img-wrapper img {
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Product Cards */
+.product-card {
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    background: #fff;
+    height: 100%; /* Fixes uneven card heights */
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-card:hover .img-wrapper img {
+    transform: scale(1.08); /* Premium inner image zoom */
+}
+
+.product-card img {
+    height: 300px !important;
+    object-fit: cover !important;
+    width: 100% !important;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.filter-tab {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.filter-tab:hover {
+    color: var(--theme-color) !important;
+}
+
+.filter-tab-active {
+    cursor: default;
+}
+
+/* Promo Banner */
+.promo-banner {
+    box-shadow: var(--shadow-md);
+    transition: transform 0.4s ease;
+}
+.promo-banner:hover {
+    transform: scale(1.01);
+}
+.valentine-banner-img {
+    object-fit: cover; 
+    min-height: 100%;
+    height: 100%;
+    transition: transform 0.8s ease;
+}
+.promo-banner:hover .valentine-banner-img {
+    transform: scale(1.05);
+}
+
+/* Expert Portrait Images */
+.expert-box {
+    cursor: pointer;
+}
+.expert-img {
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover;
+    transition: all 0.4s ease;
+    border: 4px solid transparent;
+}
+.expert-box:hover .expert-img {
+    transform: scale(1.05) translateY(-5px);
+    border-color: #fff;
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* --- BLOG CARDS FIX --- */
+.blog-card {
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    height: 100%; /* Makes all 4 cards exactly the same height */
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card .card-body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.blog-card img {
+    height: 500px !important; /* Forces all 4 blog images to be the same height */
+    object-fit: cover !important;
+    width: 100% !important;
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover) !important;
+}
+
+.blog-card:hover .img-wrapper img {
+    transform: scale(1.08);
+}
+
+.read-more {
+    transition: color 0.3s ease;
+}
+.blog-card:hover .read-more {
+    color: var(--theme-color) !important;
+}
+
+/* Newsletter Form */
+.newsletter-form {
+    max-width: 550px;
+}
+.newsletter-form .form-control:focus {
+    box-shadow: none;
+}
+
+/* Footer Styles */
+.footer-links a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+    transform: translateX(5px); /* Cute slide effect on footer links */
+}
+
+.social-icon {
+    width: 40px; 
+    height: 40px;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-color: rgba(255,255,255,0.1) !important;
+}
+
+.social-icon:hover {
+    background-color: var(--theme-color) !important;
+    transform: translateY(-5px) scale(1.1); 
+}
+
+.payment-icons i {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+.payment-icons i:hover {
+    opacity: 1;
+    color: #fff;
+}
